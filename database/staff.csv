@@ -1,6 +1,6 @@
-staff_id,staff_name,staff_position
-1,Adib Zaini,Supervisor
-2,Samad,Supervisor
-3,Samsul,Trainee
-4,Samsuri,Trainee
-5,Hanafi,Trainee
+staff_id,staff_name,staff_position,username,password
+1,Adib Zaini,Supervisor,adib_zaini,012345678
+2,Samad,Supervisor,samad,012345678
+3,Samsul,Trainee,samsul,012345678
+4,Samsuri,Trainee,samsuri,012345678
+5,Hanafi,Trainee,hanafi,012345678

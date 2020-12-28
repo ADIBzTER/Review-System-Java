@@ -13,7 +13,7 @@ public class Staff {
 
         try {
             FileWriter writer = new FileWriter("../database/staff.csv");
-            writer.write(id + ", " + name + ", " + position);
+            writer.write(id + "," + name + "," + position);
             writer.write("\n");
             writer.close();
         } catch (IOException e) {

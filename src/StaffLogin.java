@@ -1,5 +1,9 @@
 package src;
 
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+
 public class StaffLogin extends javax.swing.JFrame {
 
     public StaffLogin() {
@@ -32,15 +36,19 @@ public class StaffLogin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Password:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Login");
-
         jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,15 +96,41 @@ public class StaffLogin extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>  
+    
+    // Login
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
+        String username = jTextField1.getText();
+        String password = String.valueOf(jPasswordField1.getPassword());
 
-    /**
-     * @param args the command line arguments
-     */
+        final String PATH = "C:/Users/Adib Zaini/Desktop/CS230 PART 3/CSC483/Project/app/database/staff.csv";
+
+        try {
+            Scanner reader = new Scanner(new File(PATH));
+
+            while(reader.hasNextLine()) {
+                String[] line = reader.nextLine().split(",");
+                if (line[1].equals("staff_name")) continue;
+                
+                if (!line[3].equals(username)) continue;
+                if (!line[4].equals(password)) continue;
+                System.out.println(line[1] + " Logged In!");
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("An error occured");
+            e.printStackTrace();
+        }
+    }
+
+    // Back
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        UI obj = new UI();
+        dispose();
+        obj.setVisible(true);
+    }
+
     public static void main(String args[]) {
 
         try {
