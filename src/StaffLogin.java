@@ -110,7 +110,7 @@ public class StaffLogin extends javax.swing.JFrame {
             Scanner reader = new Scanner(new File(PATH));
 
             while(reader.hasNextLine()) {
-                String[] line = reader.nextLine().split(",");
+                String[] line = reader.nextLine().split(";;;");
                 if (line[1].equals("staff_name")) continue;
                 
                 if (!line[3].equals(username)) continue;
