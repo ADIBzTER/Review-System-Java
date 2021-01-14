@@ -23,34 +23,10 @@ public class Staff extends javax.swing.JFrame {
     
     public Staff(String username) {
         initComponents();
-        setSize(400, 350);
         setLocationRelativeTo(null); // Frame appear on Center of screen
         title.setText("Logged In as " + username);
         this.username = username;
-//        staffList();
     }
-    
-//    private void staffList() {
-//        
-//        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.csv";
-//
-//        // Searching for staffs details
-//        try {
-//            Scanner reader = new Scanner(new File(PATH));
-//
-//            while(reader.hasNextLine()) {
-//                String[] line = reader.nextLine().split(";;;");
-//                if (line[1].equals("staff_name")) continue;
-//                
-//                javax.swing.JLabel box = new javax.swing.JLabel(line[1]);
-//                panel.add(box);
-//            }
-//            reader.close();
-//        } catch (IOException e) {
-//            System.out.println("Database cannot be read");
-//            e.printStackTrace();
-//        }
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -114,13 +90,13 @@ public class Staff extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(title)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(35, 35, 35)
                 .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(36, 36, 36)
                 .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addGap(51, 51, 51))
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -139,7 +115,9 @@ public class Staff extends javax.swing.JFrame {
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
-        // TODO add your handling code here:
+        RemoveStaff obj = new RemoveStaff(username);
+        dispose();
+        obj.setVisible(true);
     }//GEN-LAST:event_removeButtonActionPerformed
 
     /**
