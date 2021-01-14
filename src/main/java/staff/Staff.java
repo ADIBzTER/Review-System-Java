@@ -15,39 +15,42 @@ import java.util.Scanner;
  * @author Adib Zaini
  */
 public class Staff extends javax.swing.JFrame {
+    
+    private String username;
     /**
      * Creates new form Staff
      */
     
     public Staff(String username) {
         initComponents();
+        setSize(400, 350);
         setLocationRelativeTo(null); // Frame appear on Center of screen
         title.setText("Logged In as " + username);
-        staffList();
+        this.username = username;
+//        staffList();
     }
     
-    private void staffList() {
-        
-        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.csv";
-
-        // Searching for staffs details
-        try {
-            Scanner reader = new Scanner(new File(PATH));
-
-            while(reader.hasNextLine()) {
-                String[] line = reader.nextLine().split(";;;");
-                if (line[1].equals("staff_name")) continue;
-                
-                javax.swing.JCheckBox box = new javax.swing.JCheckBox(line[1]);
-                panel.add(box);
-            }
-            pack();
-            reader.close();
-        } catch (IOException e) {
-            System.out.println("Database cannot be read");
-            e.printStackTrace();
-        }
-    }
+//    private void staffList() {
+//        
+//        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.csv";
+//
+//        // Searching for staffs details
+//        try {
+//            Scanner reader = new Scanner(new File(PATH));
+//
+//            while(reader.hasNextLine()) {
+//                String[] line = reader.nextLine().split(";;;");
+//                if (line[1].equals("staff_name")) continue;
+//                
+//                javax.swing.JLabel box = new javax.swing.JLabel(line[1]);
+//                panel.add(box);
+//            }
+//            reader.close();
+//        } catch (IOException e) {
+//            System.out.println("Database cannot be read");
+//            e.printStackTrace();
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,42 +62,85 @@ public class Staff extends javax.swing.JFrame {
     private void initComponents() {
 
         title = new javax.swing.JLabel();
-        scrollPane = new javax.swing.JScrollPane();
-        panel = new javax.swing.JPanel();
+        backButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
+        removeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         title.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         title.setText("Logged In as Staff");
 
-        panel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        scrollPane.setViewportView(panel);
+        backButton.setText("Logout");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+
+        addButton.setText("Add Staff");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
+
+        removeButton.setText("Remove Staff");
+        removeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addComponent(title)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPane)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(title))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(removeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(title)
-                .addGap(18, 18, 18)
-                .addComponent(scrollPane)
-                .addGap(42, 42, 42))
+                .addGap(28, 28, 28)
+                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addGap(51, 51, 51))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        StaffLogin obj = new StaffLogin();
+        dispose();
+        obj.setVisible(true);
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        AddStaff obj = new AddStaff(username);
+        dispose();
+        obj.setVisible(true);
+    }//GEN-LAST:event_addButtonActionPerformed
+
+    private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,8 +176,9 @@ public class Staff extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel panel;
-    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JButton addButton;
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton removeButton;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
