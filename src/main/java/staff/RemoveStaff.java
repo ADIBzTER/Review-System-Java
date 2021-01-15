@@ -28,11 +28,11 @@ public class RemoveStaff extends javax.swing.JFrame {
      * Creates new form RemoveStaff
      */
     public RemoveStaff(String username) {
+        this.username = username;
         initComponents();
         setSize(400, 350);
         setLocationRelativeTo(null); // Frame appear on Center of screen
         staffList();
-        this.username = username;
     }
 
     private void staffList() {
@@ -47,7 +47,8 @@ public class RemoveStaff extends javax.swing.JFrame {
                 }
 
                 // Add checkbox into ArrayList
-                javax.swing.JCheckBox box = new javax.swing.JCheckBox(line[0] + " " + line[1] + "    " + line[2]);
+                javax.swing.JCheckBox box = new javax.swing.JCheckBox(line[0] + "  |  " + line[1] + "  |  " + line[2]);
+                if (line[2].equals("Admin")) box.setEnabled(false);
                 checkBoxList.add(box);
             }
             reader.close();

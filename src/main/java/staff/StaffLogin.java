@@ -174,6 +174,7 @@ public class StaffLogin extends javax.swing.JFrame {
                 String[] line = reader.nextLine().split(";;;");
                 if (line[1].equals("staff_name")) continue;
                 
+                if (!line[2].equals("Admin")) continue;
                 if (!line[3].equals(username)) continue;
                 if (!line[4].equals(password)) continue;
                 System.out.println(line[1] + " Logged In!");
