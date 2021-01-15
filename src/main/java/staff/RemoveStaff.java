@@ -6,6 +6,7 @@
 package staff;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -15,6 +16,9 @@ import java.util.ArrayList;
  * @author Adib Zaini
  */
 public class RemoveStaff extends javax.swing.JFrame {
+
+    final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.csv";
+    final String TEMP_PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\temp.csv";
 
     private String username;
 
@@ -32,8 +36,6 @@ public class RemoveStaff extends javax.swing.JFrame {
     }
 
     private void staffList() {
-        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.csv";
-
         // Searching for staffs details
         try {
             Scanner reader = new Scanner(new File(PATH));
@@ -45,7 +47,7 @@ public class RemoveStaff extends javax.swing.JFrame {
                 }
 
                 // Add checkbox into ArrayList
-                javax.swing.JCheckBox box = new javax.swing.JCheckBox(line[0] + " " + line[1] + "\t\t" + line[2]);
+                javax.swing.JCheckBox box = new javax.swing.JCheckBox(line[0] + " " + line[1] + "    " + line[2]);
                 checkBoxList.add(box);
             }
             reader.close();
@@ -64,12 +66,14 @@ public class RemoveStaff extends javax.swing.JFrame {
 
     private void removeStaff() {
 
+        String str = "";
+
         for (int i = 0; i < checkBoxList.size(); i++) {
-            System.out.println("a " + i);
 
             javax.swing.JCheckBox box = checkBoxList.get(i);
+
             if (box.isSelected()) {
-                System.out.println("b " + i);
+                // Remove Staff in UI
                 checkBoxList.remove(i);
                 panel.remove(box);
                 i -= 1;
@@ -77,6 +81,76 @@ public class RemoveStaff extends javax.swing.JFrame {
         }
         repaint();
         revalidate();
+        removeStaffFromFile();
+    }
+
+    private void removeStaffFromFile() {
+
+        String str = "staff_id;;;staff_name;;;staff_position;;;username;;;password\n";
+
+        for (javax.swing.JCheckBox box : checkBoxList) {
+
+            // Remove Staff in file
+            try {
+                Scanner reader = new Scanner(new File(PATH));
+                FileWriter writer = new FileWriter(TEMP_PATH);
+
+                while (reader.hasNextLine()) {
+
+                    // Get id from file
+                    String line = reader.nextLine();
+                    System.out.println(line);
+                    String[] values = line.split(";;;");
+
+                    // Get id from checkbox
+                    String id = box.getText().substring(0, box.getText().indexOf(" "));
+
+                    if (!id.equals(values[0])) {
+                        continue;
+                    }
+                    str += line + "\n";
+                }
+                System.out.println(str);
+                writer.write(str);
+                reader.close();
+                writer.close();
+            } catch (IOException e) {
+                System.out.println("Database cannot be read");
+                e.printStackTrace();
+            }
+        }
+
+        // All Staffs removed
+        if (checkBoxList.isEmpty()) {
+            try {
+                FileWriter writer = new FileWriter(TEMP_PATH);
+                writer.write(str);
+                writer.close();
+            } catch (IOException e) {
+                System.out.println("Database cannot be read");
+                e.printStackTrace();
+            }
+        }
+
+        // Update Original file
+        try {
+            File file = new File(TEMP_PATH);
+            Scanner reader = new Scanner(file);
+            FileWriter writer = new FileWriter(PATH);
+            String string = "";
+            
+            while (reader.hasNextLine()) {
+                string += reader.nextLine() + "\n";
+            }
+            writer.write(string);
+            
+            reader.close();
+            writer.close();
+            file.delete();
+        } catch (IOException e) {
+            System.out.println("Database cannot be read");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -161,7 +235,15 @@ public class RemoveStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
-        removeStaff();
+        
+        for (javax.swing.JCheckBox box : checkBoxList) {
+            if (box.isSelected()) {
+                removeStaff();
+                return;
+            }
+        }
+        javax.swing.JOptionPane.showMessageDialog(null, "No Item Selected", "Notice", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_removeButtonActionPerformed
 
     /**

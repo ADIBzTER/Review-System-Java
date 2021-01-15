@@ -33,6 +33,7 @@
                           <Component id="staffLoginButton" max="32767" attributes="0"/>
                           <Component id="customerLoginButton" pref="209" max="32767" attributes="0"/>
                           <Component id="readReviewButton" max="32767" attributes="0"/>
+                          <Component id="reportButton" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -46,12 +47,14 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="title" min="-2" pref="28" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="staffLoginButton" min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="staffLoginButton" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="customerLoginButton" min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="customerLoginButton" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="readReviewButton" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <Component id="readReviewButton" min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="reportButton" min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,6 +88,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="READ REVIEW"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="reportButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="REPORT"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reportButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

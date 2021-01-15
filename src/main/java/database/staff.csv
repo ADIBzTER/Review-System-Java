@@ -1,9 +1,7 @@
 staff_id;;;staff_name;;;staff_position;;;username;;;password
-1;;;Adib Zaini;;;Supervisor;;;adib_zaini;;;012345678
-2;;;Samad;;;Supervisor;;;samad;;;012345678
-3;;;Samsul;;;Trainee;;;samsul;;;012345678
-4;;;Samsuri;;;Trainee;;;samsuri;;;012345678
-5;;;a;;;Trainee;;;a;;;a
-6;;;ayam;;;sdf;;;asfd;;;asdf
-7;;;asdf;;;sadf;;;asfd;;;sadf
-8;;;kambing;;;asdfd;;;x;;;x
+1;;;Adib Zaini;;;Supervisor;;;adib_zaini;;;a
+2;;;Samad;;;Trainee;;;samad;;;a
+3;;;Samil;;;Supervisor;;;samil;;;a
+4;;;Sopian Jusoh;;;Trainee;;;a;;;a
+5;;;Ayam;;;Supervisor;;;sopam;;;b
+6;;;Nurshaiki Heykal;;;Trainee;;;sdf;;;sfda
