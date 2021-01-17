@@ -43,6 +43,7 @@ public class StaffLogin extends javax.swing.JFrame {
         resetButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Staff");
 
         title.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         title.setText("Staff Login");
@@ -157,7 +158,7 @@ public class StaffLogin extends javax.swing.JFrame {
         String username = usernameField.getText();
         String password = String.valueOf(passwordField.getPassword());
 
-        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.csv";
+        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.txt";
 
         // Empty text field
         if (username.isBlank() || password.isBlank()) {

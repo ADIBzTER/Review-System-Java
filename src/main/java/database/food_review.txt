@@ -1,0 +1,10 @@
+Jack;;;3;;;Satisfactory
+Steve;;;3;;;Taste fine
+Henry;;;5;;;Delicious
+Mia;;;4;;;Tasty
+Isla;;;2;;;Too much sugar!
+Sofia;;;4;;;Good!
+Evie;;;1;;;TOO SALTY!
+Emily;;;3;;;Great!
+Oliver;;;3;;;Too pricy
+Mason;;;1;;;No taste

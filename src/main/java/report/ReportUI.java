@@ -17,8 +17,6 @@ import main.Main;
  * @author Optiplex980
  */
 public class ReportUI extends javax.swing.JFrame {
-    
-    String filepath = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\data.txt";
 
     /**
      * Creates new form ReportUI
@@ -193,6 +191,7 @@ public class ReportUI extends javax.swing.JFrame {
         //calculate average
         int total = 0;
         
+        String filepath = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\car_review.txt";
         
         //check num of line inside the file
         try {
@@ -344,6 +343,8 @@ public class ReportUI extends javax.swing.JFrame {
         int total = 0;
         
         
+        String filepath = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\hotel_review.txt";
+        
         //check num of line inside the file
         try {
             Scanner readFile = new Scanner(new File(filepath));
@@ -492,6 +493,8 @@ public class ReportUI extends javax.swing.JFrame {
         
         //calculate average
         int total = 0;
+        
+        String filepath = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\water_review.txt";
         
         
         //check num of line inside the file
@@ -643,6 +646,7 @@ public class ReportUI extends javax.swing.JFrame {
         //calculate average
         int total = 0;
         
+        String filepath = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\food_review.txt";
         
         //check num of line inside the file
         try {
@@ -793,6 +797,7 @@ public class ReportUI extends javax.swing.JFrame {
         //calculate average
         int total = 0;
         
+        String filepath = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\travel_review.txt";
         
         //check num of line inside the file
         try {
@@ -943,6 +948,7 @@ public class ReportUI extends javax.swing.JFrame {
         //calculate average
         int total = 0;
         
+        String filepath = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\wifi_review.txt";
         
         //check num of line inside the file
         try {

@@ -1,0 +1,10 @@
+Jack;;;4;;;Very fun
+Steve;;;5;;;Service is great!
+Henry;;;4;;;Good service
+Mia;;;4;;;Satisfactory
+Isla;;;5;;;Good value
+Sofia;;;5;;;Very Satisfy with the service
+Evie;;;3;;;Not much activity
+Emily;;;4;;;Great!
+Oliver;;;2;;;The service here is limited
+Mason;;;5;;;The activities here are so much fun!

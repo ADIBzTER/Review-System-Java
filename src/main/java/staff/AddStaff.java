@@ -47,6 +47,7 @@ public class AddStaff extends javax.swing.JFrame {
         positionField = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Staff");
 
         title.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         title.setText("Add Staff");
@@ -163,7 +164,7 @@ public class AddStaff extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         
-        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.csv";
+        final String PATH = "C:\\Users\\Adib Zaini\\Desktop\\CS230 PART 3\\CSC483\\Project\\New Folder\\project\\src\\main\\java\\database\\staff.txt";
 
         String name = nameField.getText();
         String position = positionField.getSelectedValue();
@@ -183,7 +184,7 @@ public class AddStaff extends javax.swing.JFrame {
                 String[] line = reader.nextLine().split(";;;");
                 
                 if (!reader.hasNextLine()) {
-                    writer.write((Integer.parseInt(line[0]) + 1) + ";;;" + name + ";;;" + position + ";;;" + "x;;;x");
+                    writer.write((Integer.parseInt(line[0]) + 1) + ";;;" + name + ";;;" + position);
                     writer.write("\n");
                     
                     // Dialog Box

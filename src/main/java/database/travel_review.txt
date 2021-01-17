@@ -1,0 +1,10 @@
+Jack;;;2;;;Too many people
+Steve;;;2;;;So-so service
+Henry;;;4;;;Good service
+Mia;;;4;;;Satisfactory
+Isla;;;2;;;Too pricy
+Sofia;;;2;;;Okey service
+Evie;;;3;;;Didn't travel far
+Emily;;;3;;;Tour guide is late!
+Oliver;;;2;;;Late service!
+Mason;;;4;;;Happy with the service

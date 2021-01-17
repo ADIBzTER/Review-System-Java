@@ -1,0 +1,10 @@
+Jack;;;4;;;Satisfactory
+Steve;;;3;;;Broken tail light
+Henry;;;5;;;Works just fine
+Mia;;;5;;;Works as advertise
+Isla;;;2;;;No gas
+Sofia;;;4;;;Good!
+Evie;;;1;;;Air conds not working!
+Emily;;;5;;;Great!
+Oliver;;;3;;;Signal not working
+Mason;;;4;;;Comfy

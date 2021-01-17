@@ -5,9 +5,10 @@
  */
 package main;
 
-import customer.Customer;
+import customer.CustomerLogin;
 import report.ReportUI;
 import staff.StaffLogin;
+import readreview.ReadReviewUI;
 /**
  *
  * @author Adib Zaini
@@ -38,6 +39,7 @@ public class Main extends javax.swing.JFrame {
         reportButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Review System");
 
         title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         title.setText("WELCOME TO REVIEW SYSTEM");
@@ -57,6 +59,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         readReviewButton.setText("READ REVIEW");
+        readReviewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readReviewButtonActionPerformed(evt);
+            }
+        });
 
         reportButton.setText("REPORT");
         reportButton.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +115,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_staffLoginButtonActionPerformed
 
     private void customerLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerLoginButtonActionPerformed
-        Customer obj = new Customer();
+        CustomerLogin obj = new CustomerLogin();
         dispose();
         obj.setVisible(true);
     }//GEN-LAST:event_customerLoginButtonActionPerformed
@@ -118,6 +125,12 @@ public class Main extends javax.swing.JFrame {
         dispose();
         obj.setVisible(true);
     }//GEN-LAST:event_reportButtonActionPerformed
+
+    private void readReviewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readReviewButtonActionPerformed
+        ReadReviewUI obj = new ReadReviewUI();
+        dispose();
+        obj.setVisible(true);
+    }//GEN-LAST:event_readReviewButtonActionPerformed
 
     /**
      * @param args the command line arguments

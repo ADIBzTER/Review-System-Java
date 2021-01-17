@@ -42,6 +42,7 @@ public class Staff extends javax.swing.JFrame {
         removeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Staff");
 
         title.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         title.setText("Logged In as Staff");

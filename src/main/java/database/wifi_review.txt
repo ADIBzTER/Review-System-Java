@@ -1,0 +1,10 @@
+Jack;;;4;;;Good coverage
+Steve;;;4;;;Service is affordable
+Henry;;;4;;;Good service
+Mia;;;4;;;Satisfactory
+Isla;;;3;;;Limited bandwidth
+Sofia;;;5;;;Very Satisfy with the service
+Evie;;;4;;;Good value for money
+Emily;;;4;;;Great!
+Oliver;;;3;;;Coverage is limited
+Mason;;;5;;;Very helpful service!

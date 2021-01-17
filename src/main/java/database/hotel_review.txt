@@ -1,0 +1,10 @@
+Jack;;;3;;;Fine
+Steve;;;3;;;So-so service
+Henry;;;4;;;Good service
+Mia;;;4;;;Satisfactory
+Isla;;;2;;;Too pricy
+Sofia;;;5;;;Very Satisfy with the service
+Evie;;;3;;;Bed is smelly
+Emily;;;4;;;Great!
+Oliver;;;2;;;Late service!
+Mason;;;3;;;Service is late

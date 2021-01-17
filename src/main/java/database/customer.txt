@@ -1,0 +1,6 @@
+Jack;;;jack;;;012345678;;;car
+Kelly;;;kelly;;;012345678;;;food
+Asad;;;asad;;;012345678;;;hotel
+Samad;;;samad;;;012345678;;;sea
+Sumi;;;sumi;;;012345678;;;travel
+Samsul;;;samsul;;;012345678;;;wifi
