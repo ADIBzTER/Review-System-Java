@@ -5,3 +5,4 @@ staff_id;;;staff_name;;;staff_position;;;username;;;password
 4;;;Muhammad;;;Supervisor
 5;;;Aiman;;;Supervisor
 8;;;Farhamzie;;;Trainee
+10;;;Samad;;;Supervisor

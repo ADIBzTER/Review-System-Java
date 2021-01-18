@@ -11,12 +11,16 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.text.DecimalFormat;
 import main.Main;
 /**
  *
  * @author Optiplex980
  */
 public class ReportUI extends javax.swing.JFrame {
+    
+    DecimalFormat numberFormat = new DecimalFormat("#.0");
+    
 
     /**
      * Creates new form ReportUI
@@ -111,7 +115,7 @@ public class ReportUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -325,7 +329,7 @@ public class ReportUI extends javax.swing.JFrame {
         obj.Star5.setText(num5);
         
         //call the label which displays the value of scores
-        obj.AverageScore.setText(String.valueOf(score));
+        obj.AverageScore.setText(String.valueOf(numberFormat.format(score)));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -477,7 +481,7 @@ public class ReportUI extends javax.swing.JFrame {
         obj.Star5.setText(num5);
         
         //call the label which displays the value of scores
-        obj.AverageScore.setText(String.valueOf(score));
+        obj.AverageScore.setText(String.valueOf(numberFormat.format(score)));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -629,7 +633,7 @@ public class ReportUI extends javax.swing.JFrame {
         obj.Star5.setText(num5);
         
         //call the label which displays the value of scores
-        obj.AverageScore.setText(String.valueOf(score));
+        obj.AverageScore.setText(String.valueOf(numberFormat.format(score)));
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -780,7 +784,7 @@ public class ReportUI extends javax.swing.JFrame {
         obj.Star5.setText(num5);
         
         //call the label which displays the value of scores
-        obj.AverageScore.setText(String.valueOf(score));
+        obj.AverageScore.setText(String.valueOf(numberFormat.format(score)));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -931,7 +935,7 @@ public class ReportUI extends javax.swing.JFrame {
         obj.Star5.setText(num5);
         
         //call the label which displays the value of scores
-        obj.AverageScore.setText(String.valueOf(score));
+        obj.AverageScore.setText(String.valueOf(numberFormat.format(score)));
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -1082,7 +1086,7 @@ public class ReportUI extends javax.swing.JFrame {
         obj.Star5.setText(num5);
         
         //call the label which displays the value of scores
-        obj.AverageScore.setText(String.valueOf(score));
+        obj.AverageScore.setText(String.valueOf(numberFormat.format(score)));
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
